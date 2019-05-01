@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:aop="http://www.springframework.org/schema/aop"
+       xsi:schemaLocation="http://www.springframework.org/schema/aop
+http://www.springframework.org/schema/aop/spring-aop-3.2.xsd
+http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+    <bean id="book" class="ch1.ch2.p1.Book">
+        <constructor-arg value="#{T(System).out}" />
+    </bean>
+    <bean id="library" class="ch1.ch2.p1.Library">
+        <constructor-arg ref="book" />
+    </bean>
+    <bean id="booktrace" class="ch1.p2.BookTrace" >
+        <constructor-arg value="#{T(System).out}" />
+    </bean>
+
+    <aop:config>
+        <aop:aspect ref="booktrace" >
+            <aop:pointcut id="borrowing" expression="execution(* *.request(..))" />
+            <aop:before pointcut-ref="borrowing" method="bookEntered" />
+            <aop:after pointcut-ref="borrowing" method="bookExited" />
+        </aop:aspect>
+    </aop:config>
+
+</beans>
