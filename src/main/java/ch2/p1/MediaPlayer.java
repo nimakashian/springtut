@@ -1,6 +1,5 @@
 package ch2.p1;
 
-public interface CompactDisk {
-
+public interface MediaPlayer {
     String play();
 }

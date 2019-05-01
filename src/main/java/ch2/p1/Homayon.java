@@ -8,7 +8,8 @@ public class Homayon implements CompactDisk {
     String title="mast o mastor";
     String artist="Homayon";
 
-    public void play() {
+    public String play() {
         System.out.println("cd: "+artist+"-->"+title);
+        return "cd: "+artist+"-->"+title;
     }
 }
