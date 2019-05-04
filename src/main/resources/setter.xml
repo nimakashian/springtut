@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+       xmlns:context="http://www.springframework.org/schema/context"
+       xsi:schemaLocation="http://www.springframework.org/schema/beans
+http://www.springframework.org/schema/beans/spring-beans.xsd
+http://www.springframework.org/schema/context
+http://www.springframework.org/schema/context/spring-context.xsd">
+
+    <bean id="compactDisk" class="ch2.p2.BlankCompDisk">
+        <constructor-arg index="0" value="some title"/>
+        <constructor-arg index="1" value="some artist"/>
+        <!--<constructor-arg index="2" ><null/></constructor-arg>-->
+        <constructor-arg>
+        <list>
+            <value>s1</value>
+            <value>s2</value>
+            <value>s3</value>
+            <value>s4</value>
+        </list>
+        </constructor-arg>
+
+    </bean>
+    <bean id="cdplayer" class="ch2.p2.CDPlayer" >
+        <property name="disk" ref="compactDisk" />
+    </bean>
+
+
+</beans>
