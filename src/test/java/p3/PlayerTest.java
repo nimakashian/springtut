@@ -16,7 +16,7 @@ import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @ContextConfiguration(classes = PlayerConfigDev.class)
-@ActiveProfiles("prod")
+@ActiveProfiles("dev")
 public class PlayerTest {
 
     @Rule
