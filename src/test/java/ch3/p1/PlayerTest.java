@@ -1,4 +1,4 @@
-package p3;
+package ch3.p1;
 
 import ch2.p1.CompactDisk;
 import ch2.p1.MediaPlayer;
