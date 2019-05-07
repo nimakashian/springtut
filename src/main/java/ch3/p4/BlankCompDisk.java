@@ -13,6 +13,7 @@ public class BlankCompDisk implements CompactDisk {
     public BlankCompDisk(String title, String artist) {
         this.title = title;
         this.artist = artist;
+
     }
 
     public String play() {
