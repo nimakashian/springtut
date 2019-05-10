@@ -1,34 +1,60 @@
 package ch4.p2;
 
-import ch2.p1.CompactDisk;
+
 
 import java.util.List;
 
-public class BlankCompDisk implements CompactDisk {
+public class BlankCompDisk implements CompactDisk  {
 
     private String title;
     private String artist;
     private List<String> songs;
 
-    public BlankCompDisk(String title, String artist, List<String> songs) {
-        this.title = title;
-        this.artist = artist;
-        this.songs=songs;
-
+    public String getTitle() {
+        return title;
     }
 
+    public void setTitle(String title) {
+        this.title = title;
+    }
+
+    public String getArtist() {
+        return artist;
+    }
+
+    public void setArtist(String artist) {
+        this.artist = artist;
+    }
+
+    public List<String> getSongs() {
+        return songs;
+    }
+
+    public void setSongs(List<String> songs) {
+        this.songs = songs;
+    }
+
+    public BlankCompDisk() {
+    }
+
+    @Override
     public String play() {
         System.out.println("cd: "+artist+"-->"+title);
         for (String s: songs ) {
             playTrack(s);
+//            System.out.println(" sdfsdfsf");
         }
         return "cd: "+artist+"-->"+title;
     }
 
-    public void playTrack(int track){
-        System.out.println("song:"+track);
+    @Override
+    public void playTrack(int trackNumber) {
+        System.out.println("song:"+trackNumber+"-->"+songs.get(trackNumber));
     }
-    public void playTrack(String track){
-        System.out.println("song:"+track);
+
+    @Override
+    public void playTrack(String trackNumber) {
+        System.out.println("song:"+trackNumber);
     }
+
 }

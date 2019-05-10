@@ -10,7 +10,7 @@ import java.util.Map;
 @Aspect
 public class TrackCounterAspect {
 
-    private Map<Integer, Integer> trackCounts = new HashMap<Integer, Integer>();
+    private Map<Integer, Integer> trackCounts = new HashMap<>();
 
     @Pointcut("execution(* CompactDisk.playTrack(int)) && args(trackNumber)*")
     public void trackPlayed(int trackNumber){}

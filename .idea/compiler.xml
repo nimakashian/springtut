@@ -9,5 +9,8 @@
         <module name="tut" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel target="1.8">
+      <module name="tut" target="1.8" />
+    </bytecodeTargetLevel>
   </component>
 </project>
